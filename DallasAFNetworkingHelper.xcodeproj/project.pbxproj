@@ -138,12 +138,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36C26449197FA836005BB54F /* AFNetworkingLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				50BE0EDA197F9DE300DDC820 /* AFNetworking */,
+				50BE0EEE197F9DE400DDC820 /* UIKit+AFNetworking */,
+			);
+			name = AFNetworkingLibrary;
+			sourceTree = "<group>";
+		};
 		50BE0E96197F9C2700DDC820 = {
 			isa = PBXGroup;
 			children = (
+				36C26449197FA836005BB54F /* AFNetworkingLibrary */,
 				50BE0F11197F9DF100DDC820 /* AFNetworkingHelper */,
-				50BE0EDA197F9DE300DDC820 /* AFNetworking */,
-				50BE0EEE197F9DE400DDC820 /* UIKit+AFNetworking */,
 				50BE0EA8197F9C2800DDC820 /* DallasAFNetworkingHelper */,
 				50BE0ECA197F9C2800DDC820 /* DallasAFNetworkingHelperTests */,
 				50BE0EA1197F9C2800DDC820 /* Frameworks */,
@@ -598,6 +606,7 @@
 				50BE0ED6197F9C2800DDC820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50BE0ED7197F9C2800DDC820 /* Build configuration list for PBXNativeTarget "DallasAFNetworkingHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -606,6 +615,7 @@
 				50BE0ED9197F9C2800DDC820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
