@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FF807288-25A3-441F-94E1-81D9C22F374B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DallasAFNetworkingHelper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6E9CFE93-B1AA-47FB-B5B6-D0D8CF336509</key>
+		<string>https://github.com/williamVo/AFNetworkingHelper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DallasAFNetworkingHelper.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6E9CFE93-B1AA-47FB-B5B6-D0D8CF336509</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/williamVo/AFNetworkingHelper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6E9CFE93-B1AA-47FB-B5B6-D0D8CF336509</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6E9CFE93-B1AA-47FB-B5B6-D0D8CF336509</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AFNetworkingHelper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
