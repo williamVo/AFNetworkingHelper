@@ -12,4 +12,5 @@
 + (void)requestAFHTTPRequestOperation:(NSURL *)uploadFileApi
                               success:(id)successBlock
                                  fail:(id)failBlock;
++ (void)cancelAllHTTPOperations:(NSString *)method path:(NSString *)path;
 @end

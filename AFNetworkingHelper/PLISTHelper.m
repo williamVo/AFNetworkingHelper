@@ -33,4 +33,9 @@
     
     [op start];
 }
+
++ (void)cancelAllHTTPOperations:(NSString *)method path:(NSString *)path{
+    
+}
+
 @end
