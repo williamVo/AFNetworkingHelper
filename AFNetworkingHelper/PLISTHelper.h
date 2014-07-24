@@ -12,17 +12,24 @@
 + (void)requestPListAFHTTPRequestOperation:(NSURL *)uploadFileApi
                               success:(id)successBlock
                                  fail:(id)failBlock;
++ (void)requestJSONAFHTTPRequestOperation:(NSURL *)fileURL
+                                  success:(id)successBlock
+                                     fail:(id)failBlock;
++ (void)requestXMLAFHTTPRequestOperation:(NSURL *)fileURL
+                                 success:(id)successBlock
+                                    fail:(id)failBlock;
 + (void)cancelAllHTTPOperations:(NSString *)method path:(NSString *)path;
 + (void)multiPartHTTPRequest:(NSString *)fileURL  filePath:(NSURL *)filePath
                  parameters:(NSDictionary*)parameters
                     success:(id)successBlock
                        fail:(id)failBlock;
-+(void)postgetAFHTTPOperation:(NSString *)fileURL parameters:(NSDictionary*)parameters
++ (void)postgetAFHTTPOperation:(NSString *)fileURL parameters:(NSDictionary*)parameters
                          type:(NSString *)type
                       success:(id)successBlock
                          fail:(id)failBlock;
-+(void)createAFHTTPDownloadTask:(NSURL*)downloadURL isResume:(BOOL)isResume withData:(NSData *)data destination:(id)destination success:(id)successBlock;
++ (void)createAFHTTPDownloadTask:(NSURL*)downloadURL isResume:(BOOL)isResume withData:(NSData *)data destination:(id)destination success:(id)successBlock;
 + (void)createAFHTTPUploadTask:(NSURL*)uploadURL filePath:(NSURL*)filePath destination:(id)destination success:(id)successBlock;
++ (void)createDataAFHTTPTask:(NSURL*)uploadURL filePath:(NSString*)filePath success:(id)successBlock;
 
 
 @end
