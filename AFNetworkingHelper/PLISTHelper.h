@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PLISTHelper : NSObject
-+ (void)requestAFHTTPRequestOperation:(NSURL *)uploadFileApi
++ (void)requestPListAFHTTPRequestOperation:(NSURL *)uploadFileApi
                               success:(id)successBlock
                                  fail:(id)failBlock;
 + (void)cancelAllHTTPOperations:(NSString *)method path:(NSString *)path;
@@ -21,5 +21,8 @@
                          type:(NSString *)type
                       success:(id)successBlock
                          fail:(id)failBlock;
++(void)createAFHTTPDownloadTask:(NSURL*)downloadURL isResume:(BOOL)isResume withData:(NSData *)data destination:(id)destination success:(id)successBlock;
++ (void)createAFHTTPUploadTask:(NSURL*)uploadURL filePath:(NSURL*)filePath destination:(id)destination success:(id)successBlock;
+
 
 @end
