@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PLISTHelper : NSObject
-
++ (void)requestAFHTTPRequestOperation:(NSURL *)uploadFileApi
+                              success:(id)successBlock
+                                 fail:(id)failBlock;
 @end
