@@ -23,13 +23,15 @@
                  parameters:(NSDictionary*)parameters
                     success:(id)successBlock
                        fail:(id)failBlock;
-+ (void)postgetAFHTTPOperation:(NSString *)fileURL parameters:(NSDictionary*)parameters
-                         type:(NSString *)type
++(void)postgetAFHTTPOperation:(NSString *)fileURL parameters:(NSDictionary*)parameters
+                       isPOST:(BOOL *)isPOST
                       success:(id)successBlock
                          fail:(id)failBlock;
 + (void)createAFHTTPDownloadTask:(NSURL*)downloadURL isResume:(BOOL)isResume withData:(NSData *)data destination:(id)destination success:(id)successBlock;
 + (void)createAFHTTPUploadTask:(NSURL*)uploadURL filePath:(NSURL*)filePath destination:(id)destination success:(id)successBlock;
 + (void)createDataAFHTTPTask:(NSURL*)uploadURL filePath:(NSString*)filePath success:(id)successBlock;
-
++ (NSMutableURLRequest*)parametersEncodingwithMethod:(NSString*)method urlString:(NSString*)urlString contentType:(NSString*)contentType parameters:(NSDictionary*)parameters;
++(void)getShareNetworkStatus;
++(void)getHTTPNetworkStatus:(NSURL*)URL;
 
 @end
