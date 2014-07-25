@@ -126,28 +126,28 @@
 + (void)createDataAFHTTPTask:(NSURL*)uploadURL filePath:(NSString*)filePath success:(id)successBlock;
 
 /** 
- 
+  @author: Tony
  */
 + (NSMutableURLRequest*)parametersEncodingwithMethod:(NSString*)method urlString:(NSString*)urlString contentType:(NSString*)contentType parameters:(NSDictionary*)parameters;
 
 /** get SHARED NETWORK REACHABILITY
- 
+  @author: William
  */
 +(void)getShareNetworkStatus;
 
 /** get HTTP Network REACHABILITY
- 
+  @author: Violet
  */
 +(void)getHTTPNetworkStatus:(NSURL*)URL;
 
 
 /** GET WITH AFHTTPREQUESTOPERATION
- 
+  @author: William
  */
 +(void)getAFHTTPRequestOperation:(NSURL*)url success:(id)successBlock fail:(id)failBlock;
 
 /** BATCH OF OPERATIONS
- 
+  @author: Tony
  */
 +(void)callBatchOfRequestOperations:(NSString*)url method:(NSString*)method batch:(id)batch filesToUpload:(NSArray *)filesToUpload success:(id)successBlock fail:(id)failBlock;
 
