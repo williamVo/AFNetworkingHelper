@@ -45,14 +45,18 @@
                                  success:(id)successBlock
                                     fail:(id)failBlock;
 
-/** cancel All HTTP Operations
- @param method :
- @param path:
- @param successBlock :A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments: the created request operation and the object created from the response data of request.
- @param failBlock :A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments:, the created request operation and the NSError object describing the network or parsing error that occurred.
+/**
+ Cancels all operations in the HTTP client's operation queue whose URLs match the specified HTTP method and path.
+ 
+ @param method The HTTP method to match for the cancelled requests, such as `GET`, `POST`, `PUT`, or `DELETE`. If `nil`, all request operations with URLs matching the path will be cancelled.
+ @param URLStringToMatched The URL string to match for the operation. If `nil`, no path will be appended to the base URL. 
+ @param The operation queue which manages operations enqueued by the HTTP client
  @author: William
  */
-+ (void)cancelAllHTTPOperations:(NSString *)method path:(NSString *)path;
++ (void)cancelAllHTTPOperations:(NSString *)URLStringToMatched
+                     operations:(NSArray *)operations
+                 OperationQueue:(NSOperationQueue *)operationQueue
+                         method:(NSString *)method;
 
 
 /** POST MULTI-PART REQUEST
@@ -151,5 +155,18 @@
  */
 +(void)callBatchOfRequestOperations:(NSString*)url method:(NSString*)method batch:(id)batch filesToUpload:(NSArray *)filesToUpload success:(id)successBlock fail:(id)failBlock;
 
-
+/**
+ Shows an alert view with the error of the specified session task, if any, with a custom cancel button title and other button titles.
+ 
+ @param task The session task.
+ @param delegate The alert view delegate.
+ @param cancelButtonTitle The title of the cancel button or nil if there is no cancel button. Using this argument is equivalent to setting the cancel button index to the value returned by invoking addButtonWithTitle: specifying this title.
+ @param otherButtonTitles The title of another button. Using this argument is equivalent to invoking addButtonWithTitle: with this title to add more buttons. Too many buttons can cause the alert view to scroll. For guidelines on the best ways to use an alert in an app, see "Temporary Views". Titles of additional buttons to add to the receiver, terminated with `nil`.
+ */
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
++ (void)showAlertViewForTaskWithErrorOnCompletion:(NSURLSessionTask *)task
+                                         delegate:(id)delegate
+                                cancelButtonTitle:(NSString *)cancelButtonTitle
+                                otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+#endif
 @end

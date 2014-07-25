@@ -69,10 +69,27 @@
     [op start];
 }
 
-+ (void)cancelAllHTTPOperations:(NSString *)method path:(NSString *)path{
-    
++ (void)cancelAllHTTPOperations:(NSString *)URLStringToMatched
+                     operations:(NSArray *)operations
+                 OperationQueue:(NSOperationQueue *)operationQueue
+                         method:(NSString *)method
+{
+    for (NSOperation *operation in [operationQueue operations])
+    {
+        if (![operation isKindOfClass:[AFHTTPRequestOperation class]])
+        {
+            continue;
+        }
+        
+        BOOL hasMatchingMethod = !method || [method isEqualToString:[[(AFHTTPRequestOperation *)operation request] HTTPMethod]];
+        BOOL hasMatchingURL = [[[[(AFHTTPRequestOperation *)operation request] URL] absoluteString] isEqualToString:URLStringToMatched];
+        
+        if (hasMatchingMethod && hasMatchingURL)
+        {
+            [operation cancel];
+        }
+    }
 }
-
 
 +(void)multiPartHTTPRequest:(NSString *)fileURL  filePath:(NSURL *)filePath
                  parameters:(NSDictionary*)parameters
@@ -259,4 +276,24 @@
     }];
     [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
 }
+
++ (void)showAlertViewForTaskWithErrorOnCompletion:(NSURLSessionTask *)task
+                                         delegate:(id)delegate
+                                cancelButtonTitle:(NSString *)cancelButtonTitle
+                                otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION
+{
+    __block id observer = [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingTaskDidCompleteNotification object:task queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notification) {
+        
+        NSError *error = notification.userInfo[AFNetworkingTaskDidCompleteErrorKey];
+        if (error) {
+            NSString *title, *message;
+            AFGetAlertViewTitleAndMessageFromError(error, &title, &message);
+            
+            [[[UIAlertView alloc] initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil] show];
+        }
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:observer name:AFNetworkingTaskDidCompleteNotification object:notification.object];
+    }];
+}
+
 @end
