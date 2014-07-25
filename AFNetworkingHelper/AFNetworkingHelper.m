@@ -13,6 +13,33 @@
 
 #pragma mark - HTTP Request Operation Manager
 
+static void AFGetAlertViewTitleAndMessageFromError(NSError *error, NSString *__autoreleasing *title, NSString *__autoreleasing *message)
+{
+    if (error.localizedDescription && (error.localizedRecoverySuggestion || error.localizedFailureReason))
+    {
+        *title = error.localizedDescription;
+
+        if (error.localizedRecoverySuggestion)
+        {
+            *message = error.localizedRecoverySuggestion;
+        }
+        else
+        {
+            *message = error.localizedFailureReason;
+        }
+    }
+    else if (error.localizedDescription)
+    {
+        *title = NSLocalizedStringFromTable(@"Error", @"AFNetworking", @"Fallback Error Description");
+        *message = error.localizedDescription;
+    }
+    else
+    {
+        *title = NSLocalizedStringFromTable(@"Error", @"AFNetworking", @"Fallback Error Description");
+        *message = [NSString stringWithFormat:NSLocalizedStringFromTable(@"%@ Error: %ld", @"AFNetworking", @"Fallback Error Failure Reason Format"), error.domain, (long)error.code];
+    }
+}
+
 + (void)requestPListAFHTTPRequestOperation:(NSURL *)fileURL
                                    success:(id)successBlock
                                       fail:(id)failBlock
@@ -102,9 +129,11 @@
         [formData appendPartWithFileURL:filePath name:@"image" error:nil];
     };
 
-    [manager POST:fileURL parameters:parameters constructingBodyWithBlock:constructingBody
-          success:successBlock
-          failure:failBlock];
+    [manager POST:fileURL
+                       parameters:parameters
+        constructingBodyWithBlock:constructingBody
+                          success:successBlock
+                          failure:failBlock];
 }
 
 + (void)postgetAFHTTPOperation:(NSString *)fileURL parameters:(NSDictionary *)parameters
