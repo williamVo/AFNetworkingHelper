@@ -37,9 +37,7 @@
 		50BE0F0E197F9DE400DDC820 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0EFB197F9DE400DDC820 /* UIProgressView+AFNetworking.m */; };
 		50BE0F0F197F9DE400DDC820 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0EFD197F9DE400DDC820 /* UIRefreshControl+AFNetworking.m */; };
 		50BE0F10197F9DE400DDC820 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0EFF197F9DE400DDC820 /* UIWebView+AFNetworking.m */; };
-		50BE0F14197F9E6D00DDC820 /* JSONHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0F13197F9E6D00DDC820 /* JSONHelper.m */; };
-		50BE0F17197F9E9200DDC820 /* PLISTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0F16197F9E9200DDC820 /* PLISTHelper.m */; };
-		50BE0F1A197F9EAA00DDC820 /* XMLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0F19197F9EAA00DDC820 /* XMLHelper.m */; };
+		50BE0F17197F9E9200DDC820 /* AFNetworkingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BE0F16197F9E9200DDC820 /* AFNetworkingHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,12 +104,8 @@
 		50BE0EFD197F9DE400DDC820 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		50BE0EFE197F9DE400DDC820 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		50BE0EFF197F9DE400DDC820 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		50BE0F12197F9E6D00DDC820 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHelper.h; path = AFNetworkingHelper/JSONHelper.h; sourceTree = "<group>"; };
-		50BE0F13197F9E6D00DDC820 /* JSONHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONHelper.m; path = AFNetworkingHelper/JSONHelper.m; sourceTree = "<group>"; };
-		50BE0F15197F9E9200DDC820 /* PLISTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLISTHelper.h; path = AFNetworkingHelper/PLISTHelper.h; sourceTree = "<group>"; };
-		50BE0F16197F9E9200DDC820 /* PLISTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLISTHelper.m; path = AFNetworkingHelper/PLISTHelper.m; sourceTree = "<group>"; };
-		50BE0F18197F9EAA00DDC820 /* XMLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLHelper.h; path = AFNetworkingHelper/XMLHelper.h; sourceTree = "<group>"; };
-		50BE0F19197F9EAA00DDC820 /* XMLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLHelper.m; path = AFNetworkingHelper/XMLHelper.m; sourceTree = "<group>"; };
+		50BE0F15197F9E9200DDC820 /* AFNetworkingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkingHelper.h; path = AFNetworkingHelper/AFNetworkingHelper.h; sourceTree = "<group>"; };
+		50BE0F16197F9E9200DDC820 /* AFNetworkingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkingHelper.m; path = AFNetworkingHelper/AFNetworkingHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,12 +267,8 @@
 		50BE0F11197F9DF100DDC820 /* AFNetworkingHelper */ = {
 			isa = PBXGroup;
 			children = (
-				50BE0F12197F9E6D00DDC820 /* JSONHelper.h */,
-				50BE0F13197F9E6D00DDC820 /* JSONHelper.m */,
-				50BE0F15197F9E9200DDC820 /* PLISTHelper.h */,
-				50BE0F16197F9E9200DDC820 /* PLISTHelper.m */,
-				50BE0F18197F9EAA00DDC820 /* XMLHelper.h */,
-				50BE0F19197F9EAA00DDC820 /* XMLHelper.m */,
+				50BE0F15197F9E9200DDC820 /* AFNetworkingHelper.h */,
+				50BE0F16197F9E9200DDC820 /* AFNetworkingHelper.m */,
 			);
 			name = AFNetworkingHelper;
 			sourceTree = "<group>";
@@ -385,7 +375,6 @@
 				50BE0F0B197F9DE400DDC820 /* UIAlertView+AFNetworking.m in Sources */,
 				50BE0F04197F9DE400DDC820 /* AFSecurityPolicy.m in Sources */,
 				50BE0F00197F9DE400DDC820 /* AFHTTPRequestOperation.m in Sources */,
-				50BE0F14197F9E6D00DDC820 /* JSONHelper.m in Sources */,
 				50BE0F08197F9DE400DDC820 /* AFURLSessionManager.m in Sources */,
 				50BE0F07197F9DE400DDC820 /* AFURLResponseSerialization.m in Sources */,
 				50BE0EB3197F9C2800DDC820 /* AppDelegate.m in Sources */,
@@ -395,10 +384,9 @@
 				50BE0F01197F9DE400DDC820 /* AFHTTPRequestOperationManager.m in Sources */,
 				50BE0F0D197F9DE400DDC820 /* UIImageView+AFNetworking.m in Sources */,
 				50BE0F0C197F9DE400DDC820 /* UIButton+AFNetworking.m in Sources */,
-				50BE0F1A197F9EAA00DDC820 /* XMLHelper.m in Sources */,
 				50BE0F0F197F9DE400DDC820 /* UIRefreshControl+AFNetworking.m in Sources */,
 				50BE0F10197F9DE400DDC820 /* UIWebView+AFNetworking.m in Sources */,
-				50BE0F17197F9E9200DDC820 /* PLISTHelper.m in Sources */,
+				50BE0F17197F9E9200DDC820 /* AFNetworkingHelper.m in Sources */,
 				50BE0F03197F9DE400DDC820 /* AFNetworkReachabilityManager.m in Sources */,
 				50BE0EAF197F9C2800DDC820 /* main.m in Sources */,
 				50BE0F0A197F9DE400DDC820 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
